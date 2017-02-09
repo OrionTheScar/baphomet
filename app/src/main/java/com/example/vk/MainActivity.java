@@ -1,18 +1,32 @@
 package com.example.vk;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "myLogs";
     private WebView mWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mWebView = (WebView)findViewById(R.id.webView);
-        mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl("https://oauth.vk.com/authorize?client_id=5623657&display=mobile&redirect_uri=https://vk.com/friends&scope=friends&response_type=token&v=5.53&state=123456");
+//задача: получить access_token, который сохранили в next_activity и вывести его в log
+        SharedPreferences sPref = getPreferences(MODE_PRIVATE);
+        String saved_text = sPref.getString("saved_text", "");
+        Log.d(TAG, saved_text);
+        //tvOut = (TextView) findViewById(R.id.tvOut);
     }
+
+    public void onClick(View view){
+        Intent intent = new Intent(this, NextActivity.class);
+        startActivity(intent);
     }
+}
