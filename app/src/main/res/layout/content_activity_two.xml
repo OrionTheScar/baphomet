@@ -7,21 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.vk.MainActivity">
+    >
 
-    <Button
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/btnNext"
-        android:layout_centerVertical="true"
+        android:id="@+id/numbers"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:id="@+id/btnTwo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
 </RelativeLayout>
